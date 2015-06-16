@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZSF-pU-9sK">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Rpf-bl-Zen">
+            <objects>
+                <tabBarController id="ZSF-pU-9sK" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="JEw-sA-rVo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="4Zy-qs-c4M" kind="relationship" relationship="viewControllers" id="KG2-sJ-zP3"/>
+                        <segue destination="IhT-pY-otY" kind="relationship" relationship="viewControllers" id="GcF-KN-g2u"/>
+                        <segue destination="zql-Dy-x3e" kind="relationship" relationship="viewControllers" id="xrU-EE-fpI"/>
+                        <segue destination="32K-4n-VKb" kind="relationship" relationship="viewControllers" id="jMs-l1-8ej"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pO3-OZ-HGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-428" y="-48"/>
+        </scene>
+        <!--设置-->
+        <scene sceneID="YiD-c2-vTe">
+            <objects>
+                <viewController id="32K-4n-VKb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zC1-fE-kae"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vgn-5G-2JP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tka-LA-am4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="设置" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1u-Nj-Ahb">
+                                <rect key="frame" x="176" y="195" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="设置" image="tab_me_nor" id="nzK-88-ouG"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ye-D4-plr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-327.5" y="867.5"/>
+        </scene>
+        <!--下载-->
+        <scene sceneID="9La-P8-62l">
+            <objects>
+                <viewController id="zql-Dy-x3e" customClass="DownloadViewController" customModule="MangGuoTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TsY-wL-5xu"/>
+                        <viewControllerLayoutGuide type="bottom" id="TBb-gt-hqf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G3Z-6U-7dD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="下载" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3O-3B-xLP">
+                                <rect key="frame" x="166" y="247" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="下载" image="tab_me_nor" id="iFA-oh-6j7"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PYO-DP-sWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122.5" y="845.5"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="hlL-3b-JiS">
+            <objects>
+                <pageViewController storyboardIdentifier="MainPageVIewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="RXb-br-sLT" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hyu-UK-yuy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="564.5" y="-843.5"/>
+        </scene>
+        <!--All Channel View Controller-->
+        <scene sceneID="8u9-M6-GAk">
+            <objects>
+                <collectionViewController storyboardIdentifier="allChannel" id="cZc-ls-FO8" customClass="AllChannelViewController" customModule="MangGuoTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="PH0-k3-38E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="blp-DC-zV7">
+                            <size key="itemSize" width="92" height="116"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="channelCell" id="1WC-VQ-1zQ" customClass="ChannelCollectionViewCell" customModule="MangGuoTV" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="92" height="116"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8nO-RX-aw5">
+                                            <rect key="frame" x="8" y="8" width="77" height="75"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="75" id="aHM-CZ-GD8"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUI-Lh-GHd">
+                                            <rect key="frame" x="0.0" y="88" width="92" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Vpx-rr-l9f"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="wUI-Lh-GHd" secondAttribute="bottom" constant="7" id="28Y-PI-bVi"/>
+                                    <constraint firstItem="wUI-Lh-GHd" firstAttribute="leading" secondItem="1WC-VQ-1zQ" secondAttribute="leading" id="DRA-Wu-ZdT"/>
+                                    <constraint firstAttribute="trailing" secondItem="8nO-RX-aw5" secondAttribute="trailing" constant="7" id="JOc-gJ-G0Y"/>
+                                    <constraint firstItem="8nO-RX-aw5" firstAttribute="top" secondItem="1WC-VQ-1zQ" secondAttribute="top" constant="8" id="pGV-Zw-Vbc"/>
+                                    <constraint firstAttribute="trailing" secondItem="wUI-Lh-GHd" secondAttribute="trailing" id="pRx-4P-yQY"/>
+                                    <constraint firstItem="wUI-Lh-GHd" firstAttribute="top" secondItem="8nO-RX-aw5" secondAttribute="bottom" constant="5" id="sO2-Ij-Lnw"/>
+                                    <constraint firstItem="8nO-RX-aw5" firstAttribute="leading" secondItem="1WC-VQ-1zQ" secondAttribute="leading" constant="8" id="wSF-fu-ym2"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="channelImage" destination="8nO-RX-aw5" id="icq-Zv-mti"/>
+                                    <outlet property="channelName" destination="wUI-Lh-GHd" id="ToZ-mv-pEN"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="cZc-ls-FO8" id="zIr-wh-878"/>
+                            <outlet property="delegate" destination="cZc-ls-FO8" id="TNb-AT-OMR"/>
+                        </connections>
+                    </collectionView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hw3-ru-WV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1029.5" y="-856.5"/>
+        </scene>
+        <!--Channel View Controller-->
+        <scene sceneID="VZT-Pj-9kw">
+            <objects>
+                <collectionViewController storyboardIdentifier="channel" id="IP5-ZX-6io" customClass="ChannelViewController" customModule="MangGuoTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="videoCell" dataMode="prototypes" id="11e-So-Y8q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="w1V-h6-HRl">
+                            <size key="itemSize" width="174" height="141"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="videoCell" id="n5U-6A-Wg8" customClass="VideoCollectionViewCell" customModule="MangGuoTV" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="174" height="141"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_tab_recommend_normal_mz" translatesAutoresizingMaskIntoConstraints="NO" id="O1t-OC-Ivw">
+                                            <rect key="frame" x="8" y="0.0" width="158" height="120"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="120" id="ftu-WT-cdQ"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsq-hr-l3Z">
+                                            <rect key="frame" x="8" y="120" width="158" height="21"/>
+                                            <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="xkq-jN-Wrr"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="gsq-hr-l3Z" firstAttribute="leading" secondItem="n5U-6A-Wg8" secondAttribute="leading" constant="8" id="7uw-vc-Leq"/>
+                                    <constraint firstItem="gsq-hr-l3Z" firstAttribute="top" secondItem="O1t-OC-Ivw" secondAttribute="bottom" id="A9v-K6-5yN"/>
+                                    <constraint firstItem="gsq-hr-l3Z" firstAttribute="top" secondItem="O1t-OC-Ivw" secondAttribute="bottom" id="Ef4-tF-etk"/>
+                                    <constraint firstItem="O1t-OC-Ivw" firstAttribute="top" secondItem="n5U-6A-Wg8" secondAttribute="top" id="U05-t0-zFP"/>
+                                    <constraint firstAttribute="bottom" secondItem="gsq-hr-l3Z" secondAttribute="bottom" id="dDk-LJ-zD5"/>
+                                    <constraint firstItem="O1t-OC-Ivw" firstAttribute="leading" secondItem="n5U-6A-Wg8" secondAttribute="leading" constant="8" id="hw9-xE-bgp"/>
+                                    <constraint firstAttribute="trailing" secondItem="gsq-hr-l3Z" secondAttribute="trailing" constant="8" id="iIh-LS-31P"/>
+                                    <constraint firstAttribute="trailing" secondItem="O1t-OC-Ivw" secondAttribute="trailing" constant="8" id="yDa-U5-UTo"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="image" destination="O1t-OC-Ivw" id="I3w-0h-Zt8"/>
+                                    <outlet property="videoName" destination="gsq-hr-l3Z" id="Fcw-hP-dWb"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="IP5-ZX-6io" id="8mk-wW-3fx"/>
+                            <outlet property="delegate" destination="IP5-ZX-6io" id="RWj-CS-qdm"/>
+                        </connections>
+                    </collectionView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WeD-qc-afE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.5" y="-108.5"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="JdS-mm-QQ5">
+            <objects>
+                <viewController id="4Zy-qs-c4M" customClass="MainViewController" customModule="MangGuoTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q2w-rR-Vnv"/>
+                        <viewControllerLayoutGuide type="bottom" id="D9L-Tf-W2d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5YA-5I-jfD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WR9-rF-NsF">
+                                <rect key="frame" x="153" y="20" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="首页" image="tab_home_n" id="N9N-Do-qdN"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="titleName" destination="WR9-rF-NsF" id="lXd-hd-z6C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WCt-P2-b0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.5" y="-843.5"/>
+        </scene>
+        <!--搜索-->
+        <scene sceneID="3Ld-iN-qWD">
+            <objects>
+                <viewController id="IhT-pY-otY" customClass="SearchViewController" customModule="MangGuoTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pbq-u4-fhm"/>
+                        <viewControllerLayoutGuide type="bottom" id="rb7-7m-MM4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GzU-8L-WSY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="搜索" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFp-Jc-Mjt">
+                                <rect key="frame" x="173" y="280" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="搜索" image="search_icon_small" id="Bhr-9A-Vxg"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5wK-jX-Puj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122.5" y="-48.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="main_tab_recommend_normal_mz" width="64" height="64"/>
+        <image name="search_icon_small" width="20" height="20"/>
+        <image name="tab_home_n" width="24" height="23"/>
+        <image name="tab_me_nor" width="28" height="28"/>
+    </resources>
+</document>

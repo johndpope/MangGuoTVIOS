@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		385012FA1B298AE70091E5C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385012F91B298AE70091E5C4 /* AppDelegate.swift */; };
+		385012FC1B298AE70091E5C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385012FB1B298AE70091E5C4 /* ViewController.swift */; };
+		385012FF1B298AE70091E5C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385012FD1B298AE70091E5C4 /* Main.storyboard */; };
+		385013011B298AE70091E5C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385013001B298AE70091E5C4 /* Images.xcassets */; };
+		385013041B298AE70091E5C4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385013021B298AE70091E5C4 /* LaunchScreen.xib */; };
+		385013101B298AE70091E5C4 /* MangGuoTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3850130F1B298AE70091E5C4 /* MangGuoTVTests.swift */; };
+		3850131F1B2991470091E5C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3850131E1B2991470091E5C4 /* MainViewController.swift */; };
+		385013211B2991550091E5C4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385013201B2991550091E5C4 /* SearchViewController.swift */; };
+		385013231B29916E0091E5C4 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385013221B29916E0091E5C4 /* DownloadViewController.swift */; };
+		385013251B299F380091E5C4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385013241B299F380091E5C4 /* SettingViewController.swift */; };
+		38549DA41B300BC500580190 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38549DA21B300BC500580190 /* TitleCollectionViewCell.swift */; };
+		38549DA51B300BC500580190 /* TitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38549DA31B300BC500580190 /* TitleCollectionViewCell.xib */; };
+		3871CFA71B2AE35700BBDA76 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871CFA61B2AE35700BBDA76 /* File.swift */; };
+		3871CFAB1B2AF03000BBDA76 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871CFAA1B2AF03000BBDA76 /* ChannelViewController.swift */; };
+		3871CFAD1B2AF0F300BBDA76 /* AllChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3871CFAC1B2AF0F300BBDA76 /* AllChannelViewController.swift */; };
+		387EF3B51B2E731B00927876 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EF3B41B2E731B00927876 /* ChannelModel.swift */; };
+		387EF3B71B2E732D00927876 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EF3B61B2E732D00927876 /* VideoModel.swift */; };
+		387EF3B91B2E78B500927876 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EF3B81B2E78B500927876 /* VideoCollectionViewCell.swift */; };
+		387EF3BB1B2EDCD200927876 /* ChannelTemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EF3BA1B2EDCD200927876 /* ChannelTemplateModel.swift */; };
+		387EF3BD1B2EE4AD00927876 /* ChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EF3BC1B2EE4AD00927876 /* ChannelCollectionViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3850130A1B298AE70091E5C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 385012EC1B298AE70091E5C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 385012F31B298AE70091E5C4;
+			remoteInfo = MangGuoTV;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		385012F41B298AE70091E5C4 /* MangGuoTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MangGuoTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		385012F81B298AE70091E5C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		385012F91B298AE70091E5C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		385012FB1B298AE70091E5C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		385012FE1B298AE70091E5C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		385013001B298AE70091E5C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		385013031B298AE70091E5C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		385013091B298AE70091E5C4 /* MangGuoTVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MangGuoTVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3850130E1B298AE70091E5C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3850130F1B298AE70091E5C4 /* MangGuoTVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangGuoTVTests.swift; sourceTree = "<group>"; };
+		3850131E1B2991470091E5C4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		385013201B2991550091E5C4 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		385013221B29916E0091E5C4 /* DownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
+		385013241B299F380091E5C4 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		38549DA21B300BC500580190 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		38549DA31B300BC500580190 /* TitleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleCollectionViewCell.xib; sourceTree = "<group>"; };
+		3871CFA61B2AE35700BBDA76 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		3871CFAA1B2AF03000BBDA76 /* ChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
+		3871CFAC1B2AF0F300BBDA76 /* AllChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChannelViewController.swift; sourceTree = "<group>"; };
+		387EF3B41B2E731B00927876 /* ChannelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
+		387EF3B61B2E732D00927876 /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
+		387EF3B81B2E78B500927876 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		387EF3BA1B2EDCD200927876 /* ChannelTemplateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTemplateModel.swift; sourceTree = "<group>"; };
+		387EF3BC1B2EE4AD00927876 /* ChannelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCollectionViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		385012F11B298AE70091E5C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		385013061B298AE70091E5C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		385012EB1B298AE70091E5C4 = {
+			isa = PBXGroup;
+			children = (
+				385012F61B298AE70091E5C4 /* MangGuoTV */,
+				3850130C1B298AE70091E5C4 /* MangGuoTVTests */,
+				385012F51B298AE70091E5C4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		385012F51B298AE70091E5C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				385012F41B298AE70091E5C4 /* MangGuoTV.app */,
+				385013091B298AE70091E5C4 /* MangGuoTVTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		385012F61B298AE70091E5C4 /* MangGuoTV */ = {
+			isa = PBXGroup;
+			children = (
+				385013191B2990470091E5C4 /* Classes */,
+				385012F71B298AE70091E5C4 /* Supporting Files */,
+			);
+			path = MangGuoTV;
+			sourceTree = "<group>";
+		};
+		385012F71B298AE70091E5C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				385012F91B298AE70091E5C4 /* AppDelegate.swift */,
+				385013001B298AE70091E5C4 /* Images.xcassets */,
+				385013021B298AE70091E5C4 /* LaunchScreen.xib */,
+				385012F81B298AE70091E5C4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3850130C1B298AE70091E5C4 /* MangGuoTVTests */ = {
+			isa = PBXGroup;
+			children = (
+				3850130F1B298AE70091E5C4 /* MangGuoTVTests.swift */,
+				3850130D1B298AE70091E5C4 /* Supporting Files */,
+			);
+			path = MangGuoTVTests;
+			sourceTree = "<group>";
+		};
+		3850130D1B298AE70091E5C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3850130E1B298AE70091E5C4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		385013191B2990470091E5C4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3871CFA31B2AE2DD00BBDA76 /* Tools */,
+				3850131D1B2990900091E5C4 /* Models */,
+				3850131C1B2990800091E5C4 /* Controllers */,
+				3850131A1B2990560091E5C4 /* Views */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		3850131A1B2990560091E5C4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				387EF3BC1B2EE4AD00927876 /* ChannelCollectionViewCell.swift */,
+				387EF3B81B2E78B500927876 /* VideoCollectionViewCell.swift */,
+				385012FD1B298AE70091E5C4 /* Main.storyboard */,
+				38549DA21B300BC500580190 /* TitleCollectionViewCell.swift */,
+				38549DA31B300BC500580190 /* TitleCollectionViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3850131C1B2990800091E5C4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				385012FB1B298AE70091E5C4 /* ViewController.swift */,
+				3850131E1B2991470091E5C4 /* MainViewController.swift */,
+				385013201B2991550091E5C4 /* SearchViewController.swift */,
+				385013221B29916E0091E5C4 /* DownloadViewController.swift */,
+				385013241B299F380091E5C4 /* SettingViewController.swift */,
+				3871CFAA1B2AF03000BBDA76 /* ChannelViewController.swift */,
+				3871CFAC1B2AF0F300BBDA76 /* AllChannelViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3850131D1B2990900091E5C4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				387EF3B41B2E731B00927876 /* ChannelModel.swift */,
+				387EF3B61B2E732D00927876 /* VideoModel.swift */,
+				387EF3BA1B2EDCD200927876 /* ChannelTemplateModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3871CFA31B2AE2DD00BBDA76 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				3871CFA61B2AE35700BBDA76 /* File.swift */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		385012F31B298AE70091E5C4 /* MangGuoTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 385013131B298AE70091E5C4 /* Build configuration list for PBXNativeTarget "MangGuoTV" */;
+			buildPhases = (
+				385012F01B298AE70091E5C4 /* Sources */,
+				385012F11B298AE70091E5C4 /* Frameworks */,
+				385012F21B298AE70091E5C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MangGuoTV;
+			productName = MangGuoTV;
+			productReference = 385012F41B298AE70091E5C4 /* MangGuoTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		385013081B298AE70091E5C4 /* MangGuoTVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 385013161B298AE70091E5C4 /* Build configuration list for PBXNativeTarget "MangGuoTVTests" */;
+			buildPhases = (
+				385013051B298AE70091E5C4 /* Sources */,
+				385013061B298AE70091E5C4 /* Frameworks */,
+				385013071B298AE70091E5C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3850130B1B298AE70091E5C4 /* PBXTargetDependency */,
+			);
+			name = MangGuoTVTests;
+			productName = MangGuoTVTests;
+			productReference = 385013091B298AE70091E5C4 /* MangGuoTVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		385012EC1B298AE70091E5C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = xyl;
+				TargetAttributes = {
+					385012F31B298AE70091E5C4 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					385013081B298AE70091E5C4 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 385012F31B298AE70091E5C4;
+					};
+				};
+			};
+			buildConfigurationList = 385012EF1B298AE70091E5C4 /* Build configuration list for PBXProject "MangGuoTV" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 385012EB1B298AE70091E5C4;
+			productRefGroup = 385012F51B298AE70091E5C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				385012F31B298AE70091E5C4 /* MangGuoTV */,
+				385013081B298AE70091E5C4 /* MangGuoTVTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		385012F21B298AE70091E5C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				385012FF1B298AE70091E5C4 /* Main.storyboard in Resources */,
+				38549DA51B300BC500580190 /* TitleCollectionViewCell.xib in Resources */,
+				385013041B298AE70091E5C4 /* LaunchScreen.xib in Resources */,
+				385013011B298AE70091E5C4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		385013071B298AE70091E5C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		385012F01B298AE70091E5C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3850131F1B2991470091E5C4 /* MainViewController.swift in Sources */,
+				385012FC1B298AE70091E5C4 /* ViewController.swift in Sources */,
+				387EF3BD1B2EE4AD00927876 /* ChannelCollectionViewCell.swift in Sources */,
+				3871CFA71B2AE35700BBDA76 /* File.swift in Sources */,
+				3871CFAD1B2AF0F300BBDA76 /* AllChannelViewController.swift in Sources */,
+				385013211B2991550091E5C4 /* SearchViewController.swift in Sources */,
+				385013231B29916E0091E5C4 /* DownloadViewController.swift in Sources */,
+				387EF3B91B2E78B500927876 /* VideoCollectionViewCell.swift in Sources */,
+				385012FA1B298AE70091E5C4 /* AppDelegate.swift in Sources */,
+				387EF3B51B2E731B00927876 /* ChannelModel.swift in Sources */,
+				3871CFAB1B2AF03000BBDA76 /* ChannelViewController.swift in Sources */,
+				385013251B299F380091E5C4 /* SettingViewController.swift in Sources */,
+				38549DA41B300BC500580190 /* TitleCollectionViewCell.swift in Sources */,
+				387EF3BB1B2EDCD200927876 /* ChannelTemplateModel.swift in Sources */,
+				387EF3B71B2E732D00927876 /* VideoModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		385013051B298AE70091E5C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				385013101B298AE70091E5C4 /* MangGuoTVTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3850130B1B298AE70091E5C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 385012F31B298AE70091E5C4 /* MangGuoTV */;
+			targetProxy = 3850130A1B298AE70091E5C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		385012FD1B298AE70091E5C4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				385012FE1B298AE70091E5C4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		385013021B298AE70091E5C4 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				385013031B298AE70091E5C4 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		385013111B298AE70091E5C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		385013121B298AE70091E5C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		385013141B298AE70091E5C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MangGuoTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		385013151B298AE70091E5C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MangGuoTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		385013171B298AE70091E5C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MangGuoTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MangGuoTV.app/MangGuoTV";
+			};
+			name = Debug;
+		};
+		385013181B298AE70091E5C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MangGuoTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MangGuoTV.app/MangGuoTV";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		385012EF1B298AE70091E5C4 /* Build configuration list for PBXProject "MangGuoTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				385013111B298AE70091E5C4 /* Debug */,
+				385013121B298AE70091E5C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		385013131B298AE70091E5C4 /* Build configuration list for PBXNativeTarget "MangGuoTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				385013141B298AE70091E5C4 /* Debug */,
+				385013151B298AE70091E5C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		385013161B298AE70091E5C4 /* Build configuration list for PBXNativeTarget "MangGuoTVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				385013171B298AE70091E5C4 /* Debug */,
+				385013181B298AE70091E5C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 385012EC1B298AE70091E5C4 /* Project object */;
+}
