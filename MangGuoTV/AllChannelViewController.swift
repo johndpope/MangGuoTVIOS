@@ -10,13 +10,19 @@ import UIKit
 
 class AllChannelViewController: UICollectionViewController {
    var pageIndex : Int = 0
+    var parent: MainViewController!
     var channels = [ChannelModel]()
     override func loadView() {
         super.loadView()
         //loadChannelData();
         channels =  AppDelegate.channels
     }
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if parent != nil {
+            parent.currentIndex = pageIndex
+        }
+    }
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return channels.count
@@ -39,7 +45,7 @@ class AllChannelViewController: UICollectionViewController {
         let image = UIImage(data: data!)
         
         //把加载到的图片丢给imageView的image现实
-            cell.channelImage.image = image
+        cell.channelImage.image = image
         cell.channelName.text = channels[indexPath.row].channelName
         return cell;
     }
@@ -48,5 +54,19 @@ class AllChannelViewController: UICollectionViewController {
         var height:CGFloat = width + 10
         
         return CGSizeMake(width, height)
+    }
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if var channelView = self.storyboard?.instantiateViewControllerWithIdentifier("channel") as? ChannelViewController {
+            var channelInfo = AppDelegate.channels[indexPath.row]
+            if channelInfo.channelName  == "精选" || channelInfo.channelName == "热榜"{
+                
+            }else {
+                channelView.channelId = "\(channelInfo.channelId)"
+                channelView.type = channelInfo.type
+                var nvc = UINavigationController(rootViewController: channelView)
+                nvc.navigationBarHidden = true
+                self.presentViewController(nvc, animated: true, completion: nil)
+            }
+        }
     }
 }

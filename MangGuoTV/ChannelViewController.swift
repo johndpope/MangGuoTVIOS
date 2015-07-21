@@ -9,18 +9,58 @@
 import UIKit
 
 class ChannelViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+   
+    var loadingView = GlobalLoadingView.create()
     var pageIndex : Int = 0
     var channelId = ""
-    var type = ""
+    var type = "normal"
+    var parent: MainViewController!
     var channelList = [ChannelListModel]()
-    var channelUrl = "channel/getDetail?userId=&osVersion=4.4&device=sdk&appVersion=4.3.4&ticket=&channel=360dev&mac=i000000000000000&osType=android"
     override func loadView() {
         super.loadView()
-        collectionView?.registerNib(UINib(nibName: TitleCollectionViewCell.cellId, bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: TitleCollectionViewCell.cellId)
-         self.channelUrl = AppDelegate.urlHost + self.channelUrl + "&channelId=\(channelId)&type=\(type)"
-        if self.channelList.count == 0{
-             self.loadChannelData();
+        initCollectionView()
+        loadingView.addLoadErrorBlock { () -> () in
+            self.loadChannelDatas()
         }
+        loadingView.addLoadMoreErrorBlock { () -> () in
+            self.loadChannelDatas()
+        }
+        collectionView!.addRefreshAction { () -> Void in
+            self.loadChannelDatas()
+        }
+        
+        
+        
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if parent != nil {
+            parent.currentIndex = pageIndex
+        }
+        self.collectionView!.reloadData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        collectionView!.reloadData()
+        if shouldRequestData() {
+            self.collectionView!.startRefresh()
+        }
+    }
+    /**************************************** 初始化方法 ****************************************/
+    func initCollectionView() {
+        // 属性
+        self.collectionView!.dataSource = self
+        self.collectionView!.delegate = self
+        //永远有“边缘弹性“
+        self.collectionView!.alwaysBounceHorizontal = false
+        self.collectionView!.alwaysBounceVertical = true
+        self.collectionView!.showsHorizontalScrollIndicator = false
+        self.collectionView!.showsVerticalScrollIndicator = true
+        
+        collectionView?.registerNib(UINib(nibName: TitleCollectionViewCell.cellId, bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: TitleCollectionViewCell.cellId)
+        collectionView?.registerNib(UINib(nibName: BannerCollectionViewCell.bannerCellID, bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: BannerCollectionViewCell.bannerCellID)
+        collectionView!.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -35,11 +75,16 @@ class ChannelViewController: UICollectionViewController, UICollectionViewDelegat
         switch channel.type {
         case "title":
             var videoCell:TitleCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(TitleCollectionViewCell.cellId, forIndexPath: indexPath) as? TitleCollectionViewCell)!
-            
-            videoCell.titleName.text = channel.template[0].name
+        
+            videoCell.configure(channel.template[0])
             return videoCell
-        case "banner",
-        "normalAvatorText",
+        case "banner":
+            var videoCell:BannerCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(BannerCollectionViewCell.bannerCellID, forIndexPath: indexPath) as? BannerCollectionViewCell)!
+            
+            videoCell.initImages(channel.template)
+            return videoCell
+        
+        case "normalAvatorText",
         "largeLandScapeNodesc",
         "largeLandScape",
         "normalLandScapeNodesc",
@@ -48,49 +93,22 @@ class ChannelViewController: UICollectionViewController, UICollectionViewDelegat
         "roundAvatorText",
         "tvPortrait",
         "moviePortrait":
-            var videoCell:VideoCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier("videoCell", forIndexPath: indexPath) as? VideoCollectionViewCell)!
-            var channelImageUrl = channel.template[0].picUrl
-            let url = NSURL(string: channelImageUrl)
-            //图片数据
-            var data = NSData(contentsOfURL:url!)
-            //通过得到图片数据来加载
-            let image = UIImage(data: data!)
-            //把加载到的图片丢给imageView的image现实
-            videoCell.image.image = image
-            videoCell.videoName.text = channel.template[0].name
+            var videoCell:VideoCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(VideoCollectionViewCell.videoCellId, forIndexPath: indexPath) as? VideoCollectionViewCell)!
+            videoCell.configure(channel.template[0])
             return videoCell
        
         case "rankList":
-            var videoCell:VideoCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier("videoCell", forIndexPath: indexPath) as? VideoCollectionViewCell)!
-            var channelImageUrl = channel.template[0].picUrl
-            let url = NSURL(string: channelImageUrl)
-            //图片数据
-            var data = NSData(contentsOfURL:url!)
-            //通过得到图片数据来加载
-            let image = UIImage(data: data!)
-            //把加载到的图片丢给imageView的image现实
-            videoCell.image.image = image
-            videoCell.videoName.text = channel.template[0].name
+            var videoCell:VideoCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(VideoCollectionViewCell.videoCellId, forIndexPath: indexPath) as? VideoCollectionViewCell)!
+            videoCell.configure(channel.template[0])
             return videoCell
         case "live":
-            var videoCell:VideoCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier("videoCell", forIndexPath: indexPath) as? VideoCollectionViewCell)!
-            var channelImageUrl = channel.template[0].picUrl
-            let url = NSURL(string: channelImageUrl)            
-            //图片数据
-            var data = NSData(contentsOfURL:url!)
-            //通过得到图片数据来加载
-            let image = UIImage(data: data!)
-            //把加载到的图片丢给imageView的image现实
-            videoCell.image.image = image
-            videoCell.videoName.text = channel.template[0].name
+            var videoCell:VideoCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(VideoCollectionViewCell.videoCellId, forIndexPath: indexPath) as? VideoCollectionViewCell)!
+            videoCell.configure(channel.template[0])
             return videoCell
-//        case "unknowModType1":
-//            //CreateNorLandscapeImages(channeldetail.templateData);
-//            break;
-//        case "unknowModType2":
-//            //CreateNorLandscapeImages(channeldetail.templateData);
-//            break;
         default:
+            var videoCell:VideoCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(VideoCollectionViewCell.videoCellId, forIndexPath: indexPath) as? VideoCollectionViewCell)!
+            cell = videoCell
+            println("未能找到该类型=\(channel.type)")
             
             break;
             
@@ -98,45 +116,38 @@ class ChannelViewController: UICollectionViewController, UICollectionViewDelegat
         return cell;
     }
     
-    func loadChannelData() -> (Bool,String) {
-        var strErr = ""
-        var result = false
-     
-        var req = NSMutableURLRequest(URL:  NSURL(string: channelUrl)!)
-        req.timeoutInterval = 5.0
-        req.HTTPMethod = "GET"
-        req.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData
-        //req.setValue("ios", forHTTPHeaderField: "User-Agent")
-        var err:NSError?
-        let data = NSURLConnection.sendSynchronousRequest(req, returningResponse: nil, error: &err)
-        
-        if err != nil {
-            if let s = err?.localizedDescription {
-                strErr = s
-            }
-            return  ( result , strErr )
-        }
+    func loadChannelDatas(){
+        let body = commondUrl +  "&channelId=\(channelId)&type=\(type)"
+        let data = body.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
 
-                let str = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                println("data = \(str)")
-        if let d = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableLeaves, error: nil)  as?  NSDictionary
-        {
-            if let code: AnyObject = d.valueForKey("err_code"){
-                
-                switch code as! Int {
+        BaseRequest.requestWithHttp(channelDetailUrl + body, body: data!){
+        (json) -> () in
+            //println("restule data : \(json.rawString()!)")
+             var isSucc = false
+             var errorMsg = ""
+             let code = json["err_code"].intValue
+
+                switch code {
                 case 200:
-                    if let info = d.valueForKey("data") as? [NSDictionary]{
-                        for (key,obj) in enumerate(info) {
-                            if  let type = obj.valueForKey("type") as? String {
+                    if let datas = json["data"].array{
+                        self.channelList.removeAll(keepCapacity: true)
+                        for dataInfo in datas {
+                            if  let type = dataInfo["type"].string{
                                 if type == "banner"{
                                     var channel = ChannelListModel()
                                     channel.type = type
                                     var channelTemplates = [ChannelTemplateModel]()
                                     
-                                    if let templateData = obj.valueForKey("templateData")  as? [NSDictionary]{
-                                        for (key,dict) in enumerate(templateData) {
+                                    if let templateDatas = dataInfo["templateData"].array{
+                                        for templateData in templateDatas {
                                             var channelTemplate = ChannelTemplateModel()
-                                            dictConvertTemplate(dict, channelTemplate: channelTemplate)
+                                            for (k, v) in templateData {
+                                                var vStr = "\(v)"
+                                                if vStr == "null" {
+                                                    continue
+                                                }
+                                                channelTemplate.setValue(v.object, forKey: k)
+                                            }
                                             channelTemplates.append(channelTemplate)
                                         }
                                     }
@@ -144,13 +155,19 @@ class ChannelViewController: UICollectionViewController, UICollectionViewDelegat
                                     self.channelList.append(channel)
                                     
                                 }else if type != "unknowModType1" && type != "unknowModType2"{
-                                    if let templateData = obj.valueForKey("templateData")  as? [NSDictionary]{
-                                        for (key,dict) in enumerate(templateData) {
+                                    if let templateDatas = dataInfo["templateData"].array{
+                                        for templateData in templateDatas {
                                             var channel = ChannelListModel()
                                             channel.type = type
                                             var channelTemplates = [ChannelTemplateModel]()
                                             var channelTemplate = ChannelTemplateModel()
-                                            dictConvertTemplate(dict, channelTemplate: channelTemplate)
+                                            for (k, v) in templateData {
+                                                var vStr = "\(v)"
+                                                if vStr == "null" {
+                                                    continue
+                                                }
+                                                channelTemplate.setValue(v.object, forKey: k)
+                                            }
                                             channelTemplates.append(channelTemplate)
                                             channel.template = channelTemplates
                                             self.channelList.append(channel)
@@ -162,106 +179,112 @@ class ChannelViewController: UICollectionViewController, UICollectionViewDelegat
                         }
                         
                     }
-                    
-                    strErr = ""
-                    result = true
-                    
+                  
+                    isSucc = true
                 default :
-                    if let err = d.valueForKey("err_msg") as? String{
-                        strErr = "获取频道列表失败。\(err)"
+                    if let err = json["err_msg"].string{
+                       errorMsg = "获取频道列表失败。\(err)"
                     }
-                    result = false
                 }
-            }
-            
+            dispatch_async(dispatch_get_main_queue(),{
+                self.loadDataCompleted(isSucc,errorMsg: errorMsg)
+            })
         }
-        else
-        {
-            strErr = "获取视频列表失败"
+    }
+    private func loadDataCompleted(isSucc:Bool, errorMsg:String){
+        self.collectionView!.stopRefresh()
+        if isSucc{
+            self.collectionView!.enableRefresh()
+            self.loadingView.stopLoading()
+            self.collectionView!.reloadData()
+        }else{
+            self.collectionView!.disableRefresh()
+            self.loadingView.loadError(errorMsg)
         }
-        return  (result,strErr)
+       
         
     }
-    func dictConvertTemplate(dict:NSDictionary, channelTemplate:ChannelTemplateModel)->ChannelTemplateModel
-    {
-        if  let name = dict.valueForKey("name") as? String {
-            channelTemplate.name = name
-        }
-        if  let jumpType = dict.valueForKey("jumpType") as? String {
-            channelTemplate.jumpType = jumpType
-        }
-        if  let subjectId = dict.valueForKey("subjectId") as? String {
-            channelTemplate.subjectId = subjectId
-        }
-        if  let picUrl = dict.valueForKey("picUrl") as? String {
-            channelTemplate.picUrl = picUrl
-        }
-        if  let playUrl = dict.valueForKey("playUrl") as? String {
-            channelTemplate.playUrl = playUrl
-        }
-        if  let tag = dict.valueForKey("tag") as? String {
-            channelTemplate.tag = tag
-        }
-        if  let icon = dict.valueForKey("icon") as? String {
-            channelTemplate.icon = icon
-        }
-        if  let desc = dict.valueForKey("desc") as? String {
-            channelTemplate.desc = desc
-        }
-        if  let videoId = dict.valueForKey("videoId") as? String {
-            channelTemplate.videoId = videoId
-        }
-        if  let hotDegree = dict.valueForKey("hotDegree") as? String {
-            channelTemplate.hotDegree = hotDegree
-        }
-        if  let hotType = dict.valueForKey("hotType") as? String {
-            channelTemplate.hotType = hotType
-        }
-        if  let webUrl = dict.valueForKey("webUrl") as? String {
-            channelTemplate.webUrl = webUrl
-        }
-        if  let playTimeIconUrl = dict.valueForKey("playTimeIconUrl") as? String {
-            channelTemplate.playTimeIconUrl = playTimeIconUrl
-        }
-        if  let ext = dict.valueForKey("ext") as? String {
-            channelTemplate.ext = ext
-        }
-        if  let rank = dict.valueForKey("rank") as? String {
-            channelTemplate.rank = rank
-        }
-        
-        return channelTemplate;
-    }
-    
-    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         var channel = self.channelList[indexPath.row]
-        var width:CGFloat = AppDelegate.screenWidth/2 - 5
-        var height:CGFloat = 180
+        var width:CGFloat = 0
+        var height:CGFloat = 0
         switch channel.type {
         case "banner":
-           width = AppDelegate.screenWidth
+            width = AppDelegate.screenWidth
+            height = width * 2/5
         case "normalAvatorText":
             width = AppDelegate.screenWidth/4 - 10
             height = width
         case "largeLandScapeNodesc","largeLandScape","normalLandScapeNodesc","aceSeason":
-           width = AppDelegate.screenWidth
+            width = AppDelegate.screenWidth
+            height = width * 2/5
         case "normalLandScape","roundAvatorText","tvPortrait":
-           height = 120
+            width = AppDelegate.screenWidth/2 - 5
+            height = width * 3/5
         case "title":
             width = AppDelegate.screenWidth
             height = 30
         case "rankList":
             width = AppDelegate.screenWidth
+            height = width * 2/5
         case "live":
-            height = 120
+            width = AppDelegate.screenWidth/2 - 5
+            height = width * 3/5
         default:
             break;
         }
 
         return CGSizeMake(width, height)
     }
-    
+    override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        var channel = self.channelList[indexPath.row]
+        if channel.type == "title"
+        {
+            if channel.template[0].jumpType == "subjectPage"
+            {
+                if let moreView = self.storyboard?.instantiateViewControllerWithIdentifier(MoreVideoViewController.moreId)  as? MoreVideoViewController {
+                    var nvc = UINavigationController(rootViewController: moreView)
+                    nvc.navigationBarHidden = true
+                    // nvc.view.layer.addAnimation(CABasicAnimation(), forKey: nil)
+                    self.presentViewController(nvc, animated: true, completion: nil)
+                }
+            }
+        }
+        else if channel.type != "banner"
+        {
+            loadPlayView()
+        }
+    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSizeMake(AppDelegate.screenWidth, 30)
+    }
+    func loadPlayView()
+    {
+        if let playView = self.storyboard?.instantiateViewControllerWithIdentifier(PlayViewController.playViewID)  as? PlayViewController {
+            var nvc = UINavigationController(rootViewController: playView)
+            nvc.navigationBarHidden = true
+            // nvc.view.layer.addAnimation(CABasicAnimation(), forKey: nil)
+            self.presentViewController(nvc, animated: true, completion: nil)
+            //nvc.pushViewController(playView, animated: true)
+            
+            println("----self.navigationController= \(self.navigationController)")
+            
+        }
+
+    }
+    // MARK: - Helper
+    var lastUpdate: Double = 0
+    func shouldRequestData() -> Bool {
+        let now = NSDate().secondSince1970
+        if now - lastUpdate > 60 * 60 { // 更新频率
+            lastUpdate = now
+            return true
+        }
+        return false
+    }
 }
 
 

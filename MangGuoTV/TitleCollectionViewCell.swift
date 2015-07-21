@@ -12,10 +12,24 @@ class TitleCollectionViewCell: UICollectionViewCell {
 
     static let cellId = "TitleCollectionViewCell"
     
+
+  
+    @IBOutlet weak var moreLabel: UILabel!
+    
+    private var titileChannel = ChannelTemplateModel()
     @IBOutlet weak var titleName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+            }
+    func configure(channel:ChannelTemplateModel)
+    {
+        self.titileChannel = channel
+        if titileChannel.jumpType != "subjectPage"
+        {
+            self.moreLabel.hidden = true
+        }
+        self.titleName.text = titileChannel.name
+
     }
 
 }

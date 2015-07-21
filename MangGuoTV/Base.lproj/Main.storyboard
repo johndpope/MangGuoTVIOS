@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZSF-pU-9sK">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -41,7 +43,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="设置" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1u-Nj-Ahb">
                                 <rect key="frame" x="176" y="195" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -69,7 +71,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="下载" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3O-3B-xLP">
                                 <rect key="frame" x="166" y="247" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -126,7 +128,7 @@
                                                 <constraint firstAttribute="height" constant="21" id="Vpx-rr-l9f"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -144,6 +146,7 @@
                                 <connections>
                                     <outlet property="channelImage" destination="8nO-RX-aw5" id="icq-Zv-mti"/>
                                     <outlet property="channelName" destination="wUI-Lh-GHd" id="ToZ-mv-pEN"/>
+                                    <segue destination="reB-eh-YVV" kind="showDetail" id="VNC-D6-D2I"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -157,6 +160,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hw3-ru-WV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1029.5" y="-856.5"/>
+        </scene>
+        <!--Play View Controller-->
+        <scene sceneID="11t-j9-G4b">
+            <objects>
+                <viewController storyboardIdentifier="PlayViewController" id="ZLk-Wn-uO5" customClass="PlayViewController" customModule="MangGuoTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H1C-7J-rI0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FLh-pb-Tiy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vdM-H7-f7R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CIk-t6-RD2">
+                                <rect key="frame" x="126" y="160" width="123" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9M-nn-lPg">
+                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.91764712333679199" green="0.87843143939971924" blue="0.58431375026702881" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="返回">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="navBack" destination="ZLk-Wn-uO5" eventType="touchUpInside" id="Nve-Cp-rsB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="anL-Kc-D6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1483.5" y="-108.5"/>
         </scene>
         <!--Channel View Controller-->
         <scene sceneID="VZT-Pj-9kw">
@@ -173,7 +214,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="videoCell" id="n5U-6A-Wg8" customClass="VideoCollectionViewCell" customModule="MangGuoTV" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideoCollectionViewCell" id="n5U-6A-Wg8" customClass="VideoCollectionViewCell" customModule="MangGuoTV" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -196,21 +237,31 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RS6-mp-MCl">
+                                            <rect key="frame" x="160" y="118" width="0.0" height="0.0"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="gsq-hr-l3Z" firstAttribute="leading" secondItem="n5U-6A-Wg8" secondAttribute="leading" constant="8" id="7uw-vc-Leq"/>
                                     <constraint firstItem="gsq-hr-l3Z" firstAttribute="top" secondItem="O1t-OC-Ivw" secondAttribute="bottom" id="A9v-K6-5yN"/>
+                                    <constraint firstAttribute="trailing" secondItem="RS6-mp-MCl" secondAttribute="trailing" constant="14" id="E2Z-RO-27k"/>
                                     <constraint firstItem="gsq-hr-l3Z" firstAttribute="top" secondItem="O1t-OC-Ivw" secondAttribute="bottom" id="Ef4-tF-etk"/>
                                     <constraint firstItem="O1t-OC-Ivw" firstAttribute="top" secondItem="n5U-6A-Wg8" secondAttribute="top" id="U05-t0-zFP"/>
                                     <constraint firstAttribute="bottom" secondItem="gsq-hr-l3Z" secondAttribute="bottom" id="dDk-LJ-zD5"/>
                                     <constraint firstItem="O1t-OC-Ivw" firstAttribute="leading" secondItem="n5U-6A-Wg8" secondAttribute="leading" constant="8" id="hw9-xE-bgp"/>
                                     <constraint firstAttribute="trailing" secondItem="gsq-hr-l3Z" secondAttribute="trailing" constant="8" id="iIh-LS-31P"/>
+                                    <constraint firstItem="gsq-hr-l3Z" firstAttribute="top" secondItem="RS6-mp-MCl" secondAttribute="bottom" constant="2" id="nmS-20-f1J"/>
                                     <constraint firstAttribute="trailing" secondItem="O1t-OC-Ivw" secondAttribute="trailing" constant="8" id="yDa-U5-UTo"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="image" destination="O1t-OC-Ivw" id="I3w-0h-Zt8"/>
+                                    <outlet property="tagLabel" destination="RS6-mp-MCl" id="3XQ-h8-3za"/>
                                     <outlet property="videoName" destination="gsq-hr-l3Z" id="Fcw-hP-dWb"/>
                                 </connections>
                             </collectionViewCell>
@@ -238,19 +289,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WR9-rF-NsF">
-                                <rect key="frame" x="153" y="20" width="68" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fJ-nl-eMz">
+                                <rect key="frame" x="6" y="20" width="363" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="I78-er-u4s"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7fJ-nl-eMz" firstAttribute="leading" secondItem="5YA-5I-jfD" secondAttribute="leadingMargin" constant="-10" id="0Sq-fd-shc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7fJ-nl-eMz" secondAttribute="trailing" constant="-10" id="Rq1-Rc-FNC"/>
+                            <constraint firstItem="7fJ-nl-eMz" firstAttribute="top" secondItem="Q2w-rR-Vnv" secondAttribute="bottom" id="TtL-Q8-tSP"/>
+                            <constraint firstItem="D9L-Tf-W2d" firstAttribute="top" secondItem="7fJ-nl-eMz" secondAttribute="bottom" constant="562" id="nzw-9T-INt"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="首页" image="tab_home_n" id="N9N-Do-qdN"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="titleName" destination="WR9-rF-NsF" id="lXd-hd-z6C"/>
+                        <outlet property="headerScroll" destination="7fJ-nl-eMz" id="LU1-x2-rmZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCt-P2-b0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -272,7 +329,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="搜索" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFp-Jc-Mjt">
                                 <rect key="frame" x="173" y="280" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -284,6 +341,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wK-jX-Puj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="122.5" y="-48.5"/>
+        </scene>
+        <!--More Video View Controller-->
+        <scene sceneID="QvL-pQ-YgG">
+            <objects>
+                <viewController storyboardIdentifier="MoreVideoViewController" id="reB-eh-YVV" customClass="MoreVideoViewController" customModule="MangGuoTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2PI-AL-p1C"/>
+                        <viewControllerLayoutGuide type="bottom" id="j4h-nr-Je8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2nR-Zv-qPM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tf6-Ay-cFQ">
+                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.91764712329999998" green="0.87843143940000001" blue="0.58431375029999999" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="返回">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="navBack" destination="reB-eh-YVV" eventType="touchUpInside" id="Xbm-09-qMB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="991-6V-qWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1483.5" y="-856.5"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Djy-Jo-l3f">
+            <objects>
+                <pageViewController storyboardIdentifier="MoreVideoPageVIewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="rzU-WC-SU1" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MCd-ff-DMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1901.5" y="-856.5"/>
         </scene>
     </scenes>
     <resources>

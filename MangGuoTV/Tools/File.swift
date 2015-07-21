@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  ChannelViewController.swift
 //  MangGuoTV
 //
 //  Created by xyl on 15/6/12.

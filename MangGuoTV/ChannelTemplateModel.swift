@@ -11,7 +11,7 @@ class ChannelListModel{
     var type:String = ""
     var template:[ChannelTemplateModel] = []
 }
-class ChannelTemplateModel{
+class ChannelTemplateModel : BaseModel{
     var name:String = ""
     /// <summary>
     /// 跳转类型
@@ -20,7 +20,7 @@ class ChannelTemplateModel{
     /// <summary>
     ///
     /// </summary>
-    var subjectId:String = ""
+    var subjectId:Int = 0
     /// <summary>
     /// 图片地址
     /// </summary>
@@ -35,11 +35,11 @@ class ChannelTemplateModel{
     /// <summary>
     /// 视频id
     /// </summary>
-    var videoId:String = ""
+    var videoId:Int = 0
     var hotDegree:String = ""
-    var hotType:String = ""
+    var hotType:Int = 0
     var playTimeIconUrl:String = ""
     var webUrl:String = ""
-    var ext:String = ""
-    var rank:String = ""
+    var ext:Int = 0
+    var rank:Int = 0
 }

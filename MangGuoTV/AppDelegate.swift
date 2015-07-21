@@ -11,8 +11,9 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     static var screenWidth :CGFloat = 0
-    static var urlHost = "http://mobile.api.hunantv.com/"
-    var channelsUrl = "http://mobile.api.hunantv.com/channel/getList?userId=&osVersion=4.4&device=sdk&appVersion=4.3.4&ticket=&channel=360dev&mac=i000000000000000&osType=android"
+//    static var urlHost = "http://mobile.api.hunantv.com/"
+//    var channelsUrl = "http://mobile.api.hunantv.com/channel/getList?userId=&osVersion=4.4&device=sdk&appVersion=4.3.4&ticket=&channel=360dev&mac=i000000000000000&osType=android"
+//    static var commondUrl = "userId=&osVersion=4.4&device=sdk&appVersion=4.3.4&ticket=&channel=360dev&mac=i000000000000000&osType=android"
     static var channels = [ChannelModel]()
      var window: UIWindow?
 
@@ -48,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var strErr = ""
         var result = false
         
-        var req = NSMutableURLRequest(URL:  NSURL(string: channelsUrl)!)
+        var req = NSMutableURLRequest(URL:  NSURL(string: urlHost + allChannelUrl + commondUrl)!)
         req.timeoutInterval = 5.0
         req.HTTPMethod = "GET"
         req.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData
