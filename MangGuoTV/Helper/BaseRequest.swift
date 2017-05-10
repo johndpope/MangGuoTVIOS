@@ -26,10 +26,8 @@ class BaseRequest: NSObject {
                 finished(json: json)
             } else if data.length == 0 && error == nil {
                 //没有数据
-                //self.networkError(resp)
             } else if error != nil {
                 //超时
-                //self.networkError(resp)
             }
             
         })

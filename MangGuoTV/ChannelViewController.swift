@@ -71,15 +71,15 @@ class ChannelViewController: UICollectionViewController, UICollectionViewDelegat
     }
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell:UICollectionViewCell!
-        var channel = self.channelList[indexPath.row]
+        let channel = self.channelList[indexPath.row]
         switch channel.type {
         case "title":
-            var videoCell:TitleCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(TitleCollectionViewCell.cellId, forIndexPath: indexPath) as? TitleCollectionViewCell)!
+            let videoCell:TitleCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(TitleCollectionViewCell.cellId, forIndexPath: indexPath) as? TitleCollectionViewCell)!
         
             videoCell.configure(channel.template[0])
             return videoCell
         case "banner":
-            var videoCell:BannerCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(BannerCollectionViewCell.bannerCellID, forIndexPath: indexPath) as? BannerCollectionViewCell)!
+            let videoCell:BannerCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(BannerCollectionViewCell.bannerCellID, forIndexPath: indexPath) as? BannerCollectionViewCell)!
             
             videoCell.initImages(channel.template)
             return videoCell
@@ -93,22 +93,23 @@ class ChannelViewController: UICollectionViewController, UICollectionViewDelegat
         "roundAvatorText",
         "tvPortrait",
         "moviePortrait":
-            var videoCell:VideoCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(VideoCollectionViewCell.videoCellId, forIndexPath: indexPath) as? VideoCollectionViewCell)!
+            let videoCell:
+                = (collectionView.dequeueReusableCellWithReuseIdentifier(VideoCollectionViewCell.videoCellId, forIndexPath: indexPath) as? VideoCollectionViewCell)!
             videoCell.configure(channel.template[0])
             return videoCell
        
         case "rankList":
-            var videoCell:VideoCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(VideoCollectionViewCell.videoCellId, forIndexPath: indexPath) as? VideoCollectionViewCell)!
+            let videoCell:VideoCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(VideoCollectionViewCell.videoCellId, forIndexPath: indexPath) as? VideoCollectionViewCell)!
             videoCell.configure(channel.template[0])
             return videoCell
         case "live":
-            var videoCell:VideoCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(VideoCollectionViewCell.videoCellId, forIndexPath: indexPath) as? VideoCollectionViewCell)!
+            let videoCell:VideoCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(VideoCollectionViewCell.videoCellId, forIndexPath: indexPath) as? VideoCollectionViewCell)!
             videoCell.configure(channel.template[0])
             return videoCell
         default:
-            var videoCell:VideoCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(VideoCollectionViewCell.videoCellId, forIndexPath: indexPath) as? VideoCollectionViewCell)!
+            let videoCell:VideoCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier(VideoCollectionViewCell.videoCellId, forIndexPath: indexPath) as? VideoCollectionViewCell)!
             cell = videoCell
-            println("未能找到该类型=\(channel.type)")
+            print("未能找到该类型=\(channel.type)")
             
             break;
             
@@ -205,7 +206,7 @@ class ChannelViewController: UICollectionViewController, UICollectionViewDelegat
         
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        var channel = self.channelList[indexPath.row]
+        let channel = self.channelList[indexPath.row]
         var width:CGFloat = 0
         var height:CGFloat = 0
         switch channel.type {
@@ -240,13 +241,13 @@ class ChannelViewController: UICollectionViewController, UICollectionViewDelegat
         
     }
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        var channel = self.channelList[indexPath.row]
+        let channel = self.channelList[indexPath.row]
         if channel.type == "title"
         {
             if channel.template[0].jumpType == "subjectPage"
             {
                 if let moreView = self.storyboard?.instantiateViewControllerWithIdentifier(MoreVideoViewController.moreId)  as? MoreVideoViewController {
-                    var nvc = UINavigationController(rootViewController: moreView)
+                    let nvc = UINavigationController(rootViewController: moreView)
                     nvc.navigationBarHidden = true
                     // nvc.view.layer.addAnimation(CABasicAnimation(), forKey: nil)
                     self.presentViewController(nvc, animated: true, completion: nil)
@@ -264,13 +265,13 @@ class ChannelViewController: UICollectionViewController, UICollectionViewDelegat
     func loadPlayView()
     {
         if let playView = self.storyboard?.instantiateViewControllerWithIdentifier(PlayViewController.playViewID)  as? PlayViewController {
-            var nvc = UINavigationController(rootViewController: playView)
+            let nvc = UINavigationController(rootViewController: playView)
             nvc.navigationBarHidden = true
             // nvc.view.layer.addAnimation(CABasicAnimation(), forKey: nil)
             self.presentViewController(nvc, animated: true, completion: nil)
             //nvc.pushViewController(playView, animated: true)
             
-            println("----self.navigationController= \(self.navigationController)")
+            print("----self.navigationController= \(self.navigationController)")
             
         }
 

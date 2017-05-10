@@ -11,7 +11,7 @@ import UIKit
 class BannerCollectionViewCell: UICollectionViewCell,UIScrollViewDelegate {
 
     var imageW:CGFloat = AppDelegate.screenWidth - 16
-    var imageH:CGFloat = AppDelegate.screenWidth * 2/5
+    var imageH:CGFloat = AppDelegate.screenWidth 
     static let bannerCellID = "BannerCollectionViewCell"
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
